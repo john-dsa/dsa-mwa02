@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+
+Assignment: BSc Mobile Web Applications, Digital Skills Academy
+Student ID: johannes.botha@digitalskillsacademy.me
+File created: 2018/06/11
+Reference Sources: Website link to code referenced or the book, authors name and page number
+
+
+@author: John Botha
+@version: v8.0
+-
+Changelog:
+(if any)
+
+
+-->
+
+<html>
+    <head>
+        <title>MWA2</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/remote.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body id="pageBody">
+        <!--routeRequest page div-->
+        <div data-role="page" id="routeRequest" data-theme="b">
+            <!--routeRequest header-->
+            <div data-role="header" data-theme="b">
+                <h3>Bus Stop - Route Request Page<a href="#welcomeModal" data-role="button" data-mini="true" data-icon="info" class="ui-btn-left" data-rel="dialog" data-transition="pop">Info</a></h3>
+            </div>
+            <!--routeRequest content-->
+            <div data-role="content">
+                <form id="getbus" class="ui-body ui-body-a ui-corner-all">
+                    <fieldset>
+                        <div data-role="fieldcontain">
+                            <label for="stopnum" class="ui-hidden-accessible">Stop Number</label>
+                            <input type="text" value="" name="stopnum" id="stopnum" placeholder="Input Stop Number Here"/>
+                            <input type="button" data-theme="b" name="submit" id="submit" value="Submit"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!--routeRequest footer-->
+            <div data-theme="b" data-role="footer" data-position="fixed">
+           </div>
+        </div>
+        <!--Routerequest page div end-->
+
+        <!--routeslist page div-->
+        <div data-role="page" id="routeslist" data-theme="b">
+            <!--routeslist header-->
+            <div data-role="header" data-theme="b" data-close-btn="right">
+                <h3>Bus Route List<a href="#routeRequest" data-role="button" data-mini="true" data-icon="home" class="ui-btn-left">Home</a></h3>
+            </div>
+            <div data-theme="b" data-role="content">
+                <ul id="busses" data-role="listview"  data-inset="true"></ul>
+            </div>
+            <!--routeslist footer-->
+            <div data-theme="b" data-role="footer">
+            </div>
+        </div>
+        <!--routeslist page div end-->
+
+        <!--welcomeModal page div-->
+        <div data-role="page" id="welcomeModal" data-theme="c">
+            <!--welcomeModal header-->
+            <div data-role="header" data-theme="a" data-close-btn="right">
+                <h3>Welcome<a href="#routeRequest" data-role="button" data-mini="true" data-icon="home" class="ui-btn-left">Proceed</a></h3>
+            </div>
+            <div data-theme="a" data-role="content">
+                <p>Welcome to the Dublin bus route checkup! Enter your bus stop number to see the next bus available. The number is normally four digits long.</p>
+            </div>
+            <!--welcomeModal footer-->
+            <div data-theme="a" data-role="footer">
+            </div>
+        </div>
+        <!--welcomeModal page div end-->
+
+        <!--page_err page div-->
+        <div data-role="page" id="page_err" data-theme="c">
+            <!--page_err header-->
+            <div data-role="header" data-theme="a" data-close-btn="right">
+                <h3>There was an error in the request</h3>
+            </div>
+            <p id="errormessages"></p>
+            <div data-theme="a" data-role="content">
+            </div>
+            <!--page_err footer-->
+            <div data-theme="a" data-role="footer">
+            </div>
+        </div>
+        <!--page_err page div end-->
+    </body>
+</html>
